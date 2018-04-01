@@ -16,8 +16,8 @@
             <span id="left">Posts by {{poster.alias}}</span><span id="right"><a href="/quotes">Dashboard</a> | <a href="/logout">Logout</a></span>
             <p>Count: {{count}}</p>
         </div>
-        {% for quote in poster.favs.all %}
-            <p>{{quote}}</p>
+        {% for post in poster.posters.all %}
+            <p><span id="red">{{post.author}}</span>:<span>{{post.message}}</span></p>
         {% endfor %}
     </div>
 </body>

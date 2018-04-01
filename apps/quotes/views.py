@@ -49,7 +49,7 @@ def show(request, poster_id):
 
     context = {
         'poster' : Userdb.objects.get(id=poster_id),
-        'count' : Quote.objects.filter(fav=poster_id).count(),
+        'count' : Quote.objects.filter(poster=poster_id).count(),
     }
 
     return render(request, 'quotes/show.html', context)

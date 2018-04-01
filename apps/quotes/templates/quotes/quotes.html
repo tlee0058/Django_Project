@@ -33,7 +33,7 @@
             {% for fav in favs %}
                 <div id="quote">
                     {{fav}} 
-                    <p>posted by: <a href="/">{{fav.poster.alias}}</a>
+                    <p>posted by: <a href="users/{{fav.poster.id}}">{{fav.poster.alias}}</a>
                         <a href="/remove_list/{{fav.id}}"><button>Remove From My list</button></a>
                     </p>
                 </div>        

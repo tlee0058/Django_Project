@@ -38,7 +38,7 @@ class QuoteManager(models.Manager):
 class Quote(models.Model):
     message= models.TextField()
     author= models.CharField(max_length=255)
-    poster= models.ForeignKey(Userdb, related_name= "poster")
+    poster= models.ForeignKey(Userdb, related_name= "posters")
     fav = models.ManyToManyField(Userdb, related_name="favs")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
