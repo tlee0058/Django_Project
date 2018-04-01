@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Quotes Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotes/css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <span id="left">Welcome, {{user.alias}}! </span><span id="right"><a href="/logout">Logout</a></span>
+        </div>
+        
+        <div class="content">
+            <p>Quotable Quotes</p>
+            
+            {% for quote in quotes %}
+                <div id="quote">
+                    {{quote}} 
+                    <p>Posted by: <a href="users/{{quote.poster.id}}">{{quote.poster.alias}}</a>
+                        <a href="/add_list/{{quote.id}}"><button>Add to My List</button></a>  
+                    </p>
+                </div>        
+            {% endfor %}   
+        </div> 
+        <div class="content">
+            <p>Your Favorite:</p>
+            {% for fav in favs %}
+                <div id="quote">
+                    {{fav}} 
+                    <p>posted by: <a href="/">{{fav.poster.alias}}</a>
+                        <a href="/remove_list/{{fav.id}}"><button>Remove From My list</button></a>
+                    </p>
+                </div>        
+            {% endfor %}   
+        </div>     
+
+        {% if messages %}
+            {%for message in messages %}
+                <p class="error_message">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+
+        <div class="add-quotes">
+            <p>Contribute a Quote:</p>
+            <form action="/post_quote", method="post">
+                {% csrf_token %}
+                <label for="author">Quoted By:</label>
+                <input type="text" name="author">
+                <p><label for="message">Message:</label>
+                <textarea name="message"></textarea></p>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

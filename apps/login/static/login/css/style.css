@@ -1,0 +1,57 @@
+.container {
+    width: 480px;
+    margin: 20px;
+    padding: 10px;
+    background: linear-gradient(rgb(234, 241, 245), lightgrey);
+}
+
+.group {
+    border: 1px inset grey;
+    background-color: lightblue;
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    border-radius : 10px;
+    margin-right: 50px;
+}
+
+.error_message{
+    font-style: italic;
+    color: red;
+    font-size: 14px;
+}
+
+label {
+    display: inline-block;
+    width:100px;
+}
+
+input[type="submit"] {
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    border-radius : 5px;
+    box-shadow: 2px 2px 2px black; 
+    display: inline-block;
+    margin: 10px 10px 10px 205px;
+   
+}
+table {
+    
+    display: block;
+}
+    
+thead, th, tr, td{
+    border: 1px solid black;
+    text-align: center;
+}
+th {
+    background-color: blue;
+    color: white;
+}
+
+#pw_text {
+    font-size: 12px;
+    font-style: italic;
+}

@@ -1,0 +1,62 @@
+.container {
+    width: 800px;
+    margin-top: 10px;
+} 
+
+#left {
+    font-size: 20px;
+}
+
+#right {
+    font-size: 14px;
+    margin-left: 680px;
+    
+}
+
+.error_message{
+    font-style: italic;
+    color: red;
+    font-size: 14px;
+}
+
+.content {
+    width: 40%;
+    height: 500px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 60px 20px 0;
+    overflow: scroll;
+    
+}
+
+#quote {
+    border: 1px solid black;
+    margin: 10px;
+    
+    
+}
+
+#quote:nth-child(even){
+    background-color: lightgrey;
+}
+
+input[type="submit"] {
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    border-radius : 5px;
+    box-shadow: 2px 2px 2px black; 
+    
+    margin-left: 50px;
+   
+}
+label, textarea {
+    width: 100px;
+    display: block;
+
+}
+textarea {
+    width: 282px;
+}
+
