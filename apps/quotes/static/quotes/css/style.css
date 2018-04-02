@@ -10,7 +10,6 @@
 #right {
     font-size: 14px;
     margin-left: 680px;
-    
 }
 
 .error_message{
@@ -27,14 +26,11 @@
     vertical-align: top;
     margin: 10px 60px 20px 0;
     overflow: scroll;
-    
 }
 
 #quote {
     border: 1px solid black;
     margin: 10px;
-    
-    
 }
 
 #quote:nth-child(even){
@@ -47,15 +43,14 @@ input[type="submit"] {
     color: white;
     border-radius : 5px;
     box-shadow: 2px 2px 2px black; 
-    
-    margin-left: 50px;
-   
+    margin-left: 220px;
 }
+
 label, textarea {
     width: 100px;
     display: block;
-
 }
+
 textarea {
     width: 282px;
 }

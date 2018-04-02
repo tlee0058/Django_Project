@@ -12,7 +12,6 @@ def index(request):
 
     return render(request, 'login/index.html')
 
-        
 
 def register(request):
     validations = Userdb.objects.validator(request.POST)

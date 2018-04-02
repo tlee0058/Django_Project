@@ -37,19 +37,6 @@ input[type="submit"] {
     margin: 10px 10px 10px 205px;
    
 }
-table {
-    
-    display: block;
-}
-    
-thead, th, tr, td{
-    border: 1px solid black;
-    text-align: center;
-}
-th {
-    background-color: blue;
-    color: white;
-}
 
 #pw_text {
     font-size: 12px;

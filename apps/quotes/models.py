@@ -8,6 +8,7 @@ class QuoteManager(models.Manager):
        
     def validator(self, postData):
         errors = []
+        
         if len(postData['author']) < 4:
             errors.append("'Quoted By' must be at least 3 characters")
         if len(postData['message']) < 11:
@@ -22,19 +23,6 @@ class QuoteManager(models.Manager):
             poster = id,
         )
     
-    # def add_fav(self, postdata, quote_id, user_id):
-    #     # quotes = Quote.objects.all()
-    #     # quote_id = quotes.id
-    #     # user = Userdb.objects.get(id=user_id)
-    #     # user_id = user.id
-        
-    #         return self.get(id=quote_id).fav.add(Userdb.objects.get(id=user_id))
-
-        # def joinTrip(self, trip_id, user):
-        #     trip = Trip.objects.get(id=trip_id)
-        # trip.group.add(user)
-        # return (True, "Successfully added trip to your schedule!")
-        
 class Quote(models.Model):
     message= models.TextField()
     author= models.CharField(max_length=255)

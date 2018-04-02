@@ -7,6 +7,8 @@ from django.contrib import messages
 
 # Create your views here.
 def quotes(request):
+    if 'user_id' not in request.session:
+        return redirect ('/main')
 
     context = {
         'user' : Userdb.objects.get(id = request.session['user_id']),
@@ -34,7 +36,6 @@ def add_list(request, quote_id):
     quote_id = Quote.objects.get(id=quote_id).id
     user_id = Userdb.objects.get(id=request.session['user_id']).id
     
-
     Quote.objects.get(id=quote_id).fav.add(Userdb.objects.get(id=user_id))
 
     return redirect ('/quotes')

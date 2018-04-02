@@ -15,15 +15,17 @@ class UserdbManager(models.Manager):
         if not EMAIL_REGEX.match(postData['email']):
             errors.append("Invalid Email")
         else: 
-            query = self.filter(email = postData['email']).first()
-            if query > 0:
+            query = self.filter(email = postData['email'])
+            if len(query) > 0:
                 errors.append("Email exists, please log in")
 
         if len((postData['name'])) < 3:
-            errors.append("Name must be at least 2 characters and no numbers")
+            errors.append("Name must be at least 2 characters")
+        elif not postData['name'].isalpha():
+            errors.append("Name cannot contain letters")
 
         if len(postData['alias']) < 3: 
-            errors.append("Alias cannot be numbers and at least 2 characters")
+            errors.append("Alias must be at least 2 characters")
         
         if not PASSWORD_REGEX.match(postData['password']):
             errors.append("Password must be at least 8 characters")
@@ -56,14 +58,10 @@ class UserdbManager(models.Manager):
             user_pw = loginData['password'].encode()         
 
             if not bcrypt.checkpw(user_pw, dbpw):
-                errors.append("invalid password")
+                errors.append("invalid Login")
 
         return errors
     
-
-
-
-
 class Userdb(models.Model):
     name = models.CharField(max_length=255)
     alias = models.CharField(max_length=255, unique=True)
