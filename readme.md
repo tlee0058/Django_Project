@@ -1,3 +1,5 @@
+A Django project that utilties ORM to store different users' quotes to the app and are able to collect any favorite quotes to their list. They can also submit quotes and remove them from their list. Login and Registration included. The website was deployed to http://18.218.251.56/main
+
 ![alt tag](https://user-images.githubusercontent.com/32435667/38178909-0d3ff0b8-35ea-11e8-960a-346ee5d78db2.png)
 
 ![alt tag](https://user-images.githubusercontent.com/32435667/38178911-26c74982-35ea-11e8-8636-27a35d036544.png)
